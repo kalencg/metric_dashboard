@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
-import { actions } from './reducer';
 import { Provider, createClient, useQuery } from 'urql';
+import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
-
 import Paper from '@material-ui/core/Paper';
+import { actions } from './reducer';
 import { IState } from '../../store';
 
 const client = createClient({
@@ -43,7 +42,6 @@ const getLast = (state: IState) => {
   };
 };
 
-
 const Wrapper: React.FunctionComponent<Props> = props => {
   return (
     <Provider value={client}>
@@ -63,7 +61,6 @@ const Metric: React.FunctionComponent<Props> = props => {
       metricName: props.value,
     },
     requestPolicy: 'cache-and-network',
-
     pollInterval: 1000,
   });
 
@@ -80,11 +77,7 @@ const Metric: React.FunctionComponent<Props> = props => {
 
   if (fetching || !lastData[props.value]) return <LinearProgress />;
   const { value = '', unit = '' } = lastData[props.value];
-
-  return (
-    <Paper className={classes.paper}>{`${props.value}
-   ${value} ${unit}`}</Paper>
-  );
+  return <Paper className={classes.paper}>{`${props.value}  ${value} ${unit}`}</Paper>;
 };
 
 export default Wrapper;

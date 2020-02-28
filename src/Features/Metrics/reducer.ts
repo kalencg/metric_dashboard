@@ -24,7 +24,7 @@ export type LastData = {
 
 interface MetricState extends MetricsForData {
   lastData: any;
-}
+};
 
 const initialState: MetricState = {
   selectedMetrics: [],
@@ -39,7 +39,6 @@ const slice = createSlice({
       const { selectedMetrics } = action.payload;
       state.selectedMetrics = selectedMetrics;
     },
-
     metricDataRecevied: (state, action: PayloadAction<ApiMetricsData>) => {
       const { metric, value, unit } = action.payload;
       state.lastData[metric] = { value, unit };

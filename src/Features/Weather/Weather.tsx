@@ -40,7 +40,7 @@ export default () => {
 };
 
 const Weather = () => {
-  const getLocation= useGeolocation();
+  const getLocation = useGeolocation();
   // Default to houston
   const latLong = {
     latitude: getLocation.latitude || 29.7604,
@@ -57,7 +57,7 @@ const Weather = () => {
   });
 
   const { fetching, data, error } = result;
-  
+
   useEffect(() => {
     if (error) {
       dispatch(actions.weatherApiErrorReceived({ error: error.message }));

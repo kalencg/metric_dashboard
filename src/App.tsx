@@ -32,7 +32,7 @@ const App = () => (
       <Wrapper>
         <Header />
         <Dashboard />
-        <NowWhat />
+        {/* <NowWhat /> */}
         <ToastContainer />
       </Wrapper>
     </Provider>
