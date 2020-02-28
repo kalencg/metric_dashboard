@@ -13,6 +13,7 @@ const client = createClient({
 
 const query = `
 query($latLong: WeatherQuery!) {
+  heartBeat
   getWeatherForLocation(latLong: $latLong) {
     description
     locationName
@@ -39,7 +40,7 @@ export default () => {
 };
 
 const Weather = () => {
-  const getLocation = useGeolocation();
+  const getLocation= useGeolocation();
   // Default to houston
   const latLong = {
     latitude: getLocation.latitude || 29.7604,
@@ -54,7 +55,9 @@ const Weather = () => {
       latLong,
     },
   });
+
   const { fetching, data, error } = result;
+  
   useEffect(() => {
     if (error) {
       dispatch(actions.weatherApiErrorReceived({ error: error.message }));

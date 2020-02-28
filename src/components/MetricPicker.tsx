@@ -4,7 +4,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Chip from '@material-ui/core/Chip';
+//import Chip from '@material-ui/core/Chip';
+import Chip from './Chip';
 
 import { shallowEqual, useSelector, useDispatch } from 'react-redux';
 import { IState } from '../store';

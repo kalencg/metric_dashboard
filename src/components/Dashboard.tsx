@@ -1,15 +1,14 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-
 import MetricPicker from './MetricPicker';
-import LiveStat from './LiveStat';
+import LiveStats from './LiveStats';
 import Plotter from './Plotter';
 
 export default () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={6}>
-        <LiveStat />
+        <LiveStats />
       </Grid>
       <Grid item xs={6}>
         <MetricPicker />
