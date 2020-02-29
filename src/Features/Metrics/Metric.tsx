@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
 
 interface Props {
   value: string;
+  
 }
 
 const getLast = (state: IState) => {
@@ -77,7 +78,11 @@ const Metric: React.FunctionComponent<Props> = props => {
 
   if (fetching || !lastData[props.value]) return <LinearProgress />;
   const { value = '', unit = '' } = lastData[props.value];
-  return <Paper className={classes.paper}>{`${props.value}  ${value} ${unit}`}</Paper>;
+  return <Paper className={classes.paper}>
+    <h1>{props.value}</h1>
+  <h2>{`${value} ${unit}`}</h2>
+  
+    </Paper>;
 };
 
 export default Wrapper;
